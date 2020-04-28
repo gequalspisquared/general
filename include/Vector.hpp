@@ -1,4 +1,8 @@
-/* dickin around with vectors */
+/*
+Simple vector library, could always be expanded upon
+Created by Nick Crane 
+*/
+
 #pragma once
 #include <math.h>
 
@@ -25,6 +29,7 @@ struct vec2d
     inline void operator-=(const vec2d& other) {i -= other.i; j -= other.j;}
     inline vec2d operator*(const double& x) {return vec2d(i * x, j * x);}
     inline double mag() {return sqrt(i*i + j*j);}
+    inline double mag2() {return i*i + j*j;}
 };
 
 struct vec3d 
@@ -44,4 +49,5 @@ struct vec3d
     inline bool operator==(const vec3d& other) {return i==other.i && j==other.j && k==other.k;}
     // inline double operator*(const vec3d& other) {return i * other.i + j * other.j + k * other.k;}
     inline double mag() {return sqrt(i*i + j*j + k*k);}
+    inline double mag2() {return i*i + j*j + k*k;}
 };
