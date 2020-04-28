@@ -4,6 +4,7 @@
 #include <future>
 #include <vector>
 
+// basic particle structure used by other classes
 class PARTICLE 
 {
 public:
@@ -35,11 +36,13 @@ public:
     ~PARTICLE() {}
 };
 
+// used for simulations of celestial bodies
 class BODY : public PARTICLE 
 {
     double mu = univG * m;
 };
 
+// used for electrodynamics // need to add something for magnetism?
 class CHARGEDPARTICLE : public PARTICLE
 {
     double q;
